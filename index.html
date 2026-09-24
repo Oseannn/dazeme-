@@ -107,10 +107,14 @@
       background: #FFFFFF;
     }
     .gallery-slide img {
+      position: absolute;
+      top: -7.5%;
+      left: 0;
       width: 100%;
-      height: 100%;
+      height: 115%;
       object-fit: cover;
       object-position: center top;
+      will-change: transform;
     }
     .gallery-dot {
       width: 6px; height: 6px;
@@ -382,7 +386,7 @@
 
       <!-- Slide 2 — Packshot -->
       <div class="gallery-slide">
-        <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="DAZED Velvet — flacon 10 ml" loading="lazy" style="object-position:center center;" />
+        <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="DAZED Velvet — flacon 10 ml" loading="lazy" style="object-fit: contain; object-position: center center; background: #FFFFFF;" />
         <div class="hero-overlay"></div>
         <div class="absolute bottom-14 left-4 right-4">
           <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Flacon produit</p>
@@ -545,11 +549,11 @@
       <p class="text-muted text-xs mt-1">Glissez pour tout voir →</p>
     </div>
     <div class="flex gap-3 px-5 overflow-x-auto no-sb pb-2">
-      <div class="rounded-2xl overflow-hidden flex-shrink-0" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
-        <img src="03_Velvet_Texture_Applicateur_Logo_Officiel.jpg" alt="Texture rouge-framboise et applicateur" class="w-full h-full object-cover" loading="lazy" />
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="03_Velvet_Texture_Applicateur_Logo_Officiel.jpg" alt="Texture rouge-framboise et applicateur" class="w-full h-full object-contain" loading="lazy" />
       </div>
-      <div class="rounded-2xl overflow-hidden flex-shrink-0" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
-        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="Territoire sensoriel framboise" class="w-full h-full object-cover" loading="lazy" />
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="Territoire sensoriel framboise" class="w-full h-full object-contain" loading="lazy" />
       </div>
      
       <div class="rounded-2xl overflow-hidden flex-shrink-0 flex items-center justify-center bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
@@ -894,6 +898,16 @@
     document.getElementById('btnWish').classList.toggle('on', wl);
     toast(wl ? '♥ Ajouté aux favoris !' : '♡ Retiré des favoris');
   });
+
+  // ── PARALLAX EFFECT ──
+  const parallaxImgs = document.querySelectorAll('.gallery-slide img');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    parallaxImgs.forEach(img => {
+      // Déplace l'image doucement vers le bas pour l'effet parallax
+      img.style.transform = `translateY(${scrolled * 0.15}px)`;
+    });
+  }, { passive: true });
 
   // ── SHARE ──
   document.getElementById('btnShare').addEventListener('click', () => {
