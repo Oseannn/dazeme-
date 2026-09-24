@@ -83,11 +83,13 @@
       transform: translateX(-50%);
       width: 390px;
       z-index: 100;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(143,19,67,0.12);
-      border-radius: 24px 24px 0 0;
-      padding: 16px 20px 20px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-top: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 -8px 30px rgba(0,0,0,0.06);
+      border-radius: 32px 32px 0 0;
+      padding: 16px 20px 24px;
     }
     @media (max-width: 430px) { .sticky-cta { width: 100%; } }
 
@@ -126,7 +128,7 @@
     /* ── HERO OVERLAY ── */
     .hero-overlay {
       position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(26,8,18,0.62) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(26,8,18,0.85) 100%);
     }
 
     /* ── SWATCH ── */
@@ -150,24 +152,28 @@
     /* ── BENEFIT CARD ── */
     .benefit-card {
       background: #FFFFFF;
-      border-radius: 14px;
-      padding: 14px 10px;
-      border: 1px solid rgba(143,19,67,0.1);
+      border-radius: 16px;
+      padding: 16px 12px;
+      border: 1px solid rgba(143,19,67,0.06);
       text-align: center;
-      transition: transform 0.2s;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
-    .benefit-card:active { transform: scale(0.97); }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(143,19,67,0.08); }
+    .benefit-card:active { transform: scale(0.96); }
 
     /* ── PRODUCT CARD (cross-sell) ── */
     .product-card {
       background: #FFFFFF;
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(143,19,67,0.1);
+      border: 1px solid rgba(143,19,67,0.06);
       flex-shrink: 0;
-      transition: transform 0.2s;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
     }
-    .product-card:active { transform: scale(0.97); }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(143,19,67,0.12); }
+    .product-card:active { transform: scale(0.96); }
 
     /* ── ACCORDION ── */
     .acc-content {
@@ -183,7 +189,7 @@
     .btn-main {
       background: #8F1343;
       color: #FFFFFF;
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 16px 20px;
       font-weight: 700;
       font-size: 15px;
@@ -191,10 +197,16 @@
       border: none;
       cursor: pointer;
       width: 100%;
-      transition: background 0.18s, transform 0.15s;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       letter-spacing: 0.01em;
+      box-shadow: 0 4px 14px rgba(143,19,67,0.3);
     }
-    .btn-main:active { background: #5C0A2A; transform: scale(0.98); }
+    .btn-main:hover {
+      background: #A3154C;
+      box-shadow: 0 6px 20px rgba(143,19,67,0.4);
+      transform: translateY(-1px);
+    }
+    .btn-main:active { background: #7A0F39; transform: scale(0.97); box-shadow: 0 2px 8px rgba(143,19,67,0.4); }
 
     /* ── CTA SECONDAIRE ── */
     .btn-outline {
@@ -215,22 +227,25 @@
     /* ── WISHLIST ── */
     .btn-wish {
       width: 50px; height: 50px;
-      border-radius: 14px;
-      border: 1.5px solid rgba(143,19,67,0.25);
+      border-radius: 16px;
+      border: 1.5px solid rgba(143,19,67,0.12);
       background: #FFFFFF;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer;
-      transition: all 0.22s;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
-    .btn-wish.on { background: #8F1343; border-color: #8F1343; }
+    .btn-wish:hover { border-color: #8F1343; transform: scale(1.05); }
+    .btn-wish.on { background: #8F1343; border-color: #8F1343; box-shadow: 0 4px 12px rgba(143,19,67,0.3); transform: scale(1); }
     .btn-wish.on svg { stroke: #FFFFFF; }
 
     /* ── NAV ── */
     .top-nav {
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(143,19,67,0.08);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.5);
     }
 
     /* ── TOAST ── */
@@ -355,21 +370,13 @@
   <section class="relative overflow-hidden">
     <div id="galleryTrack" class="gallery-track">
 
-      <!-- Slide 1 — Rendu lèvres -->
+      <!-- Slide 4 — Univers framboise -->
       <div class="gallery-slide">
-        <img src="01_Velvet_Modele_Logo_Officiel.jpg" alt="DAZED Velvet — rendu rouge-framboise sur les lèvres" />
+        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="DAZED Velvet — territoire sensoriel framboise" />
         <div class="hero-overlay"></div>
-        <div class="absolute top-4 left-4">
-          <span class="badge flex items-center gap-1">
-            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
-            </svg>
-            Manifest
-          </span>
-        </div>
         <div class="absolute bottom-14 left-4 right-4">
-          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Rendu sur les lèvres</p>
-          <p class="text-white text-xl font-extrabold leading-tight">Rouge-framboise<br/>translucide &amp; juicy</p>
+          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Territoire sensoriel</p>
+          <p class="text-white text-xl font-extrabold leading-tight">Inspiré de<br/>la framboise</p>
         </div>
       </div>
 
@@ -393,13 +400,21 @@
         </div>
       </div>
 
-      <!-- Slide 4 — Univers framboise -->
+      <!-- Slide 1 — Rendu lèvres -->
       <div class="gallery-slide">
-        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="DAZED Velvet — territoire sensoriel framboise" loading="lazy" />
+        <img src="01_Velvet_Modele_Logo_Officiel.jpg" alt="DAZED Velvet — rendu rouge-framboise sur les lèvres" loading="lazy" />
         <div class="hero-overlay"></div>
+        <div class="absolute top-4 left-4">
+          <span class="badge flex items-center gap-1">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+            </svg>
+            Manifest
+          </span>
+        </div>
         <div class="absolute bottom-14 left-4 right-4">
-          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Territoire sensoriel</p>
-          <p class="text-white text-xl font-extrabold leading-tight">Inspiré de<br/>la framboise</p>
+          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Rendu sur les lèvres</p>
+          <p class="text-white text-xl font-extrabold leading-tight">Rouge-framboise<br/>translucide &amp; juicy</p>
         </div>
       </div>
 
@@ -422,24 +437,25 @@
 
     <!-- Nom avec logo -->
     <div class="flex items-center gap-2 mb-2">
-      <img src="05_Logo_DAZED_Officiel_Transparent.png" alt="DAZED" class="h-7 object-contain" />
-      <h1 class="text-[28px] font-extrabold text-dark leading-tight">VELVET</h1>
+      <img src="05_Logo_DAZED_Officiel_Transparent.png" alt="DAZED" class="h-8 object-contain" />
+      <h1 class="text-[32px] font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-bordeaux to-rose">VELVET</h1>
     </div>
     
-    <p class="text-sm text-muted mb-4">Rouge-framboise translucide</p>
+    <p class="text-[15px] font-semibold text-rose mb-5">Rouge-framboise translucide</p>
 
     <!-- Description -->
-    <p class="text-sm text-dark leading-relaxed mb-4" style="text-align: justify;">
-      <strong class="text-bordeaux">DAZED Velvet</strong> réunit le soin des lèvres et le maquillage dans un même geste. Cette huile à lèvres dépose un voile rouge-framboise translucide, gorgé de lumière, pour un fini ultra-brillant à l'effet miroir, juicy à souhait. Douce et confortable, elle se module selon ton envie, d'un éclat subtil à une couleur plus intense, et sublime toutes les carnations
+    <p class="text-[14.5px] text-dark leading-relaxed mb-6" style="text-align: justify; opacity: 0.9;">
+      <strong class="text-bordeaux font-extrabold">DAZED Velvet</strong> réunit le soin des lèvres et le maquillage dans un même geste. Cette huile à lèvres dépose un voile rouge-framboise translucide, gorgé de lumière, pour un fini ultra-brillant à l'effet miroir, juicy à souhait. Douce et confortable, elle se module selon ton envie, d'un éclat subtil à une couleur plus intense, et sublime toutes les carnations.
+    </p>
 
     <!-- Quantité + Ajouter au panier -->
-    <div class="flex items-center gap-3 mb-4">
-      <div class="flex items-center gap-3 bg-white rounded-xl border border-gray-100 px-3 py-2 shadow-sm">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="flex items-center gap-3 bg-white rounded-[16px] border border-gray-100 px-3 py-2 shadow-sm">
         <button class="qty-btn" id="qtyMinus" aria-label="Diminuer">−</button>
-        <span id="qtyVal" class="text-sm font-bold text-dark min-w-[18px] text-center">1</span>
+        <span id="qtyVal" class="text-[15px] font-extrabold text-dark min-w-[20px] text-center">1</span>
         <button class="qty-btn" id="qtyPlus" aria-label="Augmenter">+</button>
       </div>
-      <button class="btn-main flex-1" id="btnCart">Ajouter au panier</button>
+      <button class="btn-main flex-1 shadow-[0_4px_14px_rgba(143,19,67,0.25)] hover:shadow-[0_6px_20px_rgba(143,19,67,0.35)]" id="btnCart">Ajouter au panier</button>
     </div>
 
     <!-- Strip réassurance -->
@@ -482,7 +498,7 @@
       </div>
       <div class="benefit-card">
         <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
         </svg>
         <p class="text-[10.5px] font-bold text-dark leading-tight">Soin des lèvres</p>
         <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Confort & douceur</p>
@@ -496,14 +512,16 @@
       </div>
       <div class="benefit-card">
         <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 8 2 22" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.5 15H9" />
         </svg>
         <p class="text-[10.5px] font-bold text-dark leading-tight">Sensation douce</p>
         <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Texture confortable</p>
       </div>
       <div class="benefit-card">
         <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
         </svg>
         <p class="text-[10.5px] font-bold text-dark leading-tight">Sensuel</p>
         <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Gourmand & audacieux</p>
@@ -794,7 +812,7 @@
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
       </svg>
     </button>
-    <button class="btn-main flex-shrink-0" style="width:auto;padding:14px 20px;font-size:14px;" id="btnStickyCart">
+    <button class="btn-main flex-shrink-0" style="width:auto;padding:14px 24px;font-size:15px; border-radius: 16px;" id="btnStickyCart">
       Ajouter
     </button>
   </div>
