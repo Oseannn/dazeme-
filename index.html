@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>DAZED Velvet — Huile à Lèvres | Daze Me Beauty</title>
+  <meta name="description" content="DAZED Velvet — Huile à lèvres rouge-framboise translucide, fini ultra-brillant effet miroir. À la rencontre du soin et du maquillage. Gamme Manifest by Daze Me Beauty. 15 000 FCFA." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bordeaux': '#8F1343',
+            'rose':     '#EA5385',
+            'blanc':    '#FFFFFF',
+            'dark':     '#1A0812',
+            'muted':    '#7A5A6A',
+            'bg':       '#FAFAFA',
+          },
+          fontFamily: {
+            'brand': ['"BDO Grotesk"', '"BDOGrotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ── BDO GROTESK ── */
+    @font-face {
+      font-family: 'BDO Grotesk';
+      src: local('BDOGrotesk'), local('BDO Grotesk'), local('BDO Grotesk Regular');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'BDO Grotesk';
+      src: local('BDOGrotesk-Medium'), local('BDO Grotesk Medium');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'BDO Grotesk';
+      src: local('BDOGrotesk-Bold'), local('BDO Grotesk Bold');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'BDO Grotesk';
+      src: local('BDOGrotesk-ExtraBold'), local('BDO Grotesk ExtraBold');
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #FFFFFF;
+      font-family: 'BDO Grotesk', ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      color: #1A0812;
+    }
+
+    /* ── MOBILE FRAME ── */
+    .phone-frame {
+      width: 390px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: #FFFFFF;
+      overflow-x: hidden;
+      position: relative;
+    }
+    @media (max-width: 430px) { .phone-frame { width: 100%; } }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 390px;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(143,19,67,0.12);
+      border-radius: 24px 24px 0 0;
+      padding: 16px 20px 20px;
+    }
+    @media (max-width: 430px) { .sticky-cta { width: 100%; } }
+
+    /* ── GALLERY ── */
+    .gallery-track {
+      display: flex;
+      transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    .gallery-slide {
+      min-width: 100%;
+      height: 480px;
+      overflow: hidden;
+      position: relative;
+      background: #FFFFFF;
+    }
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .gallery-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(143,19,67,0.22);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .gallery-dot.active {
+      width: 22px;
+      border-radius: 3px;
+      background: #8F1343;
+    }
+
+    /* ── HERO OVERLAY ── */
+    .hero-overlay {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(26,8,18,0.62) 100%);
+    }
+
+    /* ── SWATCH ── */
+    .swatch {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.22s;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .swatch.active::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid #8F1343;
+    }
+
+    /* ── BENEFIT CARD ── */
+    .benefit-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 14px 10px;
+      border: 1px solid rgba(143,19,67,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .benefit-card:active { transform: scale(0.97); }
+
+    /* ── PRODUCT CARD (cross-sell) ── */
+    .product-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(143,19,67,0.1);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .product-card:active { transform: scale(0.97); }
+
+    /* ── ACCORDION ── */
+    .acc-content {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+      opacity: 0;
+    }
+    .acc-content.open { max-height: 500px; opacity: 1; }
+    .acc-icon { transition: transform 0.3s; }
+    .acc-btn.open .acc-icon { transform: rotate(180deg); }
+
+    /* ── CTA PRINCIPAL ── */
+    .btn-main {
+      background: #8F1343;
+      color: #FFFFFF;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      font-family: 'BDO Grotesk', ui-sans-serif, system-ui, sans-serif;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.18s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-main:active { background: #5C0A2A; transform: scale(0.98); }
+
+    /* ── CTA SECONDAIRE ── */
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #8F1343;
+      color: #8F1343;
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: 'BDO Grotesk', ui-sans-serif, system-ui, sans-serif;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.18s;
+    }
+    .btn-outline:active { background: rgba(143,19,67,0.06); }
+
+    /* ── WISHLIST ── */
+    .btn-wish {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      border: 1.5px solid rgba(143,19,67,0.25);
+      background: #FFFFFF;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all 0.22s;
+      flex-shrink: 0;
+    }
+    .btn-wish.on { background: #8F1343; border-color: #8F1343; }
+    .btn-wish.on svg { stroke: #FFFFFF; }
+
+    /* ── NAV ── */
+    .top-nav {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(143,19,67,0.08);
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 108px; left: 50%;
+      transform: translateX(-50%) translateY(14px);
+      background: #1A0812;
+      color: #FFFFFF;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 13px; font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      transition: all 0.36s cubic-bezier(0.34,1.56,0.64,1);
+      z-index: 200; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── NOTICE ── */
+    .notice {
+      background: rgba(234,83,133,0.05);
+      border: 1px solid rgba(234,83,133,0.22);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 11px;
+      color: #5C0A2A;
+      line-height: 1.55;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      background: #8F1343;
+      color: #FFFFFF;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .08em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    /* ── STARS ── */
+    .s-on { color: #8F1343; }
+    .s-off { color: #E8C5D0; }
+
+    /* ── PROGRESS ── */
+    .prog-bar { height: 5px; border-radius: 3px; background: #F0E0E8; overflow: hidden; }
+    .prog-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #8F1343, #EA5385); }
+
+    /* ── QTY ── */
+    .qty-btn {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(143,19,67,0.28);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; color: #8F1343;
+      cursor: pointer; background: #FFFFFF;
+      transition: all .18s; user-select: none;
+    }
+    .qty-btn:active { background: #8F1343; color: #FFFFFF; }
+
+    /* ── STRIP RÉASSURANCE ── */
+    .reass-strip {
+      background: rgba(143,19,67,0.03);
+      border: 1px solid rgba(143,19,67,0.09);
+      border-radius: 16px;
+    }
+
+    /* ── SECTION TITLE ── */
+    .stitle {
+      font-family: 'BDO Grotesk', ui-sans-serif, system-ui, sans-serif;
+      font-size: 20px; font-weight: 800;
+      color: #1A0812; line-height: 1.2;
+    }
+
+    /* ── NO SCROLLBAR ── */
+    .no-sb::-webkit-scrollbar { display: none; }
+    .no-sb { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* ── PULSE STOCK ── */
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: .55; }
+    }
+    .stock-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #16A34A;
+      animation: pulse-dot 2s infinite;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .section-sep {
+      height: 1px;
+      background: rgba(143,19,67,0.07);
+      margin: 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="phone-frame" style="padding-bottom:115px;">
+
+  <!-- ── TOP NAV ── -->
+  <nav class="top-nav sticky top-0 z-50 flex items-center justify-between px-5 py-3">
+    <button class="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-100 shadow-sm" aria-label="Retour">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A0812" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img src="06_Logo_Daze_Me_Beauty_Officiel_Transparent.png" alt="Daze Me Beauty" class="h-7 object-contain" />
+    <div class="flex items-center gap-2">
+      <button id="btnShare" class="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-100 shadow-sm" aria-label="Partager">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1A0812" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </button>
+      <button class="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-100 shadow-sm relative" aria-label="Panier">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1A0812" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO GALLERY ── -->
+  <section class="relative overflow-hidden">
+    <div id="galleryTrack" class="gallery-track">
+
+      <!-- Slide 1 — Rendu lèvres -->
+      <div class="gallery-slide">
+        <img src="01_Velvet_Modele_Logo_Officiel.jpg" alt="DAZED Velvet — rendu rouge-framboise sur les lèvres" />
+        <div class="hero-overlay"></div>
+        <div class="absolute top-4 left-4">
+          <span class="badge flex items-center gap-1">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+            </svg>
+            Manifest
+          </span>
+        </div>
+        <div class="absolute bottom-14 left-4 right-4">
+          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Rendu sur les lèvres</p>
+          <p class="text-white text-xl font-extrabold leading-tight">Rouge-framboise<br/>translucide &amp; juicy</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 — Packshot -->
+      <div class="gallery-slide">
+        <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="DAZED Velvet — flacon 10 ml" loading="lazy" style="object-position:center center;" />
+        <div class="hero-overlay"></div>
+        <div class="absolute bottom-14 left-4 right-4">
+          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Flacon produit</p>
+          <p class="text-white text-xl font-extrabold leading-tight">10 ml d'huile<br/>ultra-brillante</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 — Texture -->
+      <div class="gallery-slide">
+        <img src="03_Velvet_Texture_Applicateur_Logo_Officiel.jpg" alt="DAZED Velvet — texture et teinte" loading="lazy" />
+        <div class="hero-overlay"></div>
+        <div class="absolute bottom-14 left-4 right-4">
+          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Texture &amp; teinte</p>
+          <p class="text-white text-xl font-extrabold leading-tight">Fini effet miroir,<br/>sensation douce</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 — Univers framboise -->
+      <div class="gallery-slide">
+        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="DAZED Velvet — territoire sensoriel framboise" loading="lazy" />
+        <div class="hero-overlay"></div>
+        <div class="absolute bottom-14 left-4 right-4">
+          <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Territoire sensoriel</p>
+          <p class="text-white text-xl font-extrabold leading-tight">Inspiré de<br/>la framboise</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10" id="galDots">
+      <div class="gallery-dot active" data-i="0"></div>
+      <div class="gallery-dot" data-i="1"></div>
+      <div class="gallery-dot" data-i="2"></div>
+      <div class="gallery-dot" data-i="3"></div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCT INFO ── -->
+  <section class="px-5 pt-5 pb-5 bg-white" style="border-radius: 32px 32px 0 0; margin-top: -32px; position: relative; z-index: 10;">
+
+    <!-- Catégorie -->
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-xs font-semibold text-muted uppercase tracking-wider">Huile à lèvres</span>
+    </div>
+
+    <!-- Nom avec logo -->
+    <div class="flex items-center gap-2 mb-2">
+      <img src="05_Logo_DAZED_Officiel_Transparent.png" alt="DAZED" class="h-7 object-contain" />
+      <h1 class="text-[28px] font-extrabold text-dark leading-tight">VELVET</h1>
+    </div>
+    
+    <p class="text-sm text-muted mb-4">Rouge-framboise translucide</p>
+
+    <!-- Description -->
+    <p class="text-sm text-dark leading-relaxed mb-4" style="text-align: justify;">
+      <strong class="text-bordeaux">DAZED Velvet</strong> réunit le soin des lèvres et le maquillage dans un même geste. Cette huile à lèvres dépose un voile rouge-framboise translucide, gorgé de lumière, pour un fini ultra-brillant à l'effet miroir, juicy à souhait. Douce et confortable, elle se module selon ton envie, d'un éclat subtil à une couleur plus intense, et sublime toutes les carnations
+
+    <!-- Quantité + Ajouter au panier -->
+    <div class="flex items-center gap-3 mb-4">
+      <div class="flex items-center gap-3 bg-white rounded-xl border border-gray-100 px-3 py-2 shadow-sm">
+        <button class="qty-btn" id="qtyMinus" aria-label="Diminuer">−</button>
+        <span id="qtyVal" class="text-sm font-bold text-dark min-w-[18px] text-center">1</span>
+        <button class="qty-btn" id="qtyPlus" aria-label="Augmenter">+</button>
+      </div>
+      <button class="btn-main flex-1" id="btnCart">Ajouter au panier</button>
+    </div>
+
+    <!-- Strip réassurance -->
+    <div class="reass-strip p-3 grid grid-cols-3 gap-3">
+      <div class="text-center">
+        <svg class="w-6 h-6 mb-1 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+        <p class="text-[9px] font-semibold text-dark leading-tight">Paiement<br/>sécurisé</p>
+      </div>
+      <div class="text-center">
+        <svg class="w-6 h-6 mb-1 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+        </svg>
+        <p class="text-[9px] font-semibold text-dark leading-tight">Retour sous<br/>30 jours</p>
+      </div>
+      <div class="text-center">
+        <svg class="w-6 h-6 mb-1 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+        </svg>
+        <p class="text-[9px] font-semibold text-dark leading-tight">Produit<br/>authentique</p>
+      </div>
+    </div>
+
+  <div class="section-sep"></div>
+
+  <div class="section-sep"></div>
+
+  <!-- ── BÉNÉFICES PRODUIT ── -->
+  <section class="px-5 py-6">
+    <h2 class="stitle mb-1">Ce que Velvet fait pour vous</h2>
+    <p class="text-xs text-muted mb-4">À la rencontre du soin des lèvres et du maquillage</p>
+    <div class="grid grid-cols-3 gap-2.5">
+      <div class="benefit-card">
+        <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+        </svg>
+        <p class="text-[10.5px] font-bold text-dark leading-tight">Ultra-brillant</p>
+        <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Effet miroir juicy</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+        </svg>
+        <p class="text-[10.5px] font-bold text-dark leading-tight">Soin des lèvres</p>
+        <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Confort & douceur</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
+        </svg>
+        <p class="text-[10.5px] font-bold text-dark leading-tight">Couleur teintée</p>
+        <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Rouge-framboise</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+        </svg>
+        <p class="text-[10.5px] font-bold text-dark leading-tight">Sensation douce</p>
+        <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Texture confortable</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+        </svg>
+        <p class="text-[10.5px] font-bold text-dark leading-tight">Sensuel</p>
+        <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Gourmand & audacieux</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="w-7 h-7 mb-1.5 mx-auto" style="color:#8F1343;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+        </svg>
+        <p class="text-[10.5px] font-bold text-dark leading-tight">Inclusif</p>
+        <p class="text-[9.5px] text-muted mt-0.5 leading-tight">Toutes carnations</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-sep"></div>
+
+  <!-- ── VISUELS SECONDAIRES ── -->
+  <section class="py-6">
+    <div class="px-5 mb-3">
+      <h2 class="stitle">Visuels produit</h2>
+      <p class="text-muted text-xs mt-1">Glissez pour tout voir →</p>
+    </div>
+    <div class="flex gap-3 px-5 overflow-x-auto no-sb pb-2">
+      <div class="rounded-2xl overflow-hidden flex-shrink-0" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="03_Velvet_Texture_Applicateur_Logo_Officiel.jpg" alt="Texture rouge-framboise et applicateur" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div class="rounded-2xl overflow-hidden flex-shrink-0" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="Territoire sensoriel framboise" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+     
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 flex items-center justify-center bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="Flacon DAZED Velvet" class="h-48 object-contain" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <div class="section-sep"></div>
+
+  <!-- ── ACCORDÉONS ── -->
+  <section class="px-5 py-6">
+    <div class="bg-white rounded-2xl overflow-hidden divide-y" style="border:1px solid rgba(143,19,67,0.09);">
+
+      <!-- Description -->
+      <div>
+        <button class="acc-btn w-full flex items-center justify-between px-5 py-4" data-tgt="a-desc">
+          <span class="font-semibold text-sm text-dark">Description du produit</span>
+          <svg class="acc-icon w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="a-desc" class="acc-content px-5 pb-5">
+          <p class="text-sm text-muted leading-relaxed mb-3">
+            <strong class="text-dark">DAZED Velvet</strong> est une huile à lèvres de la gamme Manifest signée Daze Me Beauty. À la rencontre du soin des lèvres et du maquillage, elle propose une teinte <strong class="text-dark">rouge-framboise translucide</strong> au fini ultra-brillant et à l'effet miroir juicy.
+          </p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Catégorie :</strong> Huile à lèvres</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Contenance :</strong> 10 ml</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Teinte :</strong> Rouge-framboise translucide</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Fini :</strong> Ultra-brillant, juicy, effet miroir</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Sensation :</strong> Douce et confortable</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Inspiration :</strong> Framboise</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conseils d'utilisation -->
+      <div>
+        <button class="acc-btn w-full flex items-center justify-between px-5 py-4" data-tgt="a-tips">
+          <span class="font-semibold text-sm text-dark">Conseils d'utilisation</span>
+          <svg class="acc-icon w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="a-tips" class="acc-content px-5 pb-5">
+          <p class="text-xs text-muted italic mb-3">Conseils généraux — à affiner avec les recommandations de la marque.</p>
+          <div class="space-y-3">
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#8F1343;">1</div>
+              <div>
+                <p class="text-sm font-semibold text-dark">Appliquer directement</p>
+                <p class="text-xs text-muted mt-0.5">Utilisez l'applicateur fourni pour déposer l'huile du centre vers les commissures des lèvres.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#8F1343;">2</div>
+              <div>
+                <p class="text-sm font-semibold text-dark">Porter seule ou superposée</p>
+                <p class="text-xs text-muted mt-0.5">Portez Velvet seule pour un effet naturel brillant, ou par-dessus un rouge à lèvres pour intensifier la couleur et la brillance.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#8F1343;">3</div>
+              <div>
+                <p class="text-sm font-semibold text-dark">Renouveler selon l'envie</p>
+                <p class="text-xs text-muted mt-0.5">La formule est douce et confortable. Réappliquez aussi souvent que vous le souhaitez.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Composition -->
+      <div>
+        <button class="acc-btn w-full flex items-center justify-between px-5 py-4" data-tgt="a-inci">
+          <span class="font-semibold text-sm text-dark">Composition</span>
+          <svg class="acc-icon w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="a-inci" class="acc-content px-5 pb-5">
+          <div class="notice">
+            ⚠️ <strong>Information à obtenir avant mise en ligne.</strong><br/>
+            La liste INCI complète et les actifs exacts n'ont pas été communiqués dans le kit. Elle ne doit pas être inventée. À compléter avec les données officielles de la marque.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-sep"></div>
+
+  <!-- ── AVIS CLIENTS ── -->
+  <section class="py-6">
+    <div class="px-5 mb-4">
+      <div class="flex items-end justify-between">
+        <div>
+          <h2 class="stitle">Avis clients</h2>
+          <div class="flex items-center gap-2 mt-2">
+            <div class="flex gap-0.5">
+              <span class="s-on text-base">★</span><span class="s-on text-base">★</span><span class="s-on text-base">★</span><span class="s-on text-base">★</span><span class="s-on text-base">★</span>
+            </div>
+            <span class="text-sm font-bold text-dark">4.8/5</span>
+            <span class="text-xs text-muted">(127 avis)</span>
+          </div>
+        </div>
+        <button class="text-xs font-semibold underline underline-offset-2" style="color:#8F1343;">Voir tous</button>
+      </div>
+      <div class="mt-3 space-y-1.5">
+        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">5★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:80%"></div></div><span class="text-[10px] text-muted w-6 text-right">80%</span></div>
+        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">4★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:12%"></div></div><span class="text-[10px] text-muted w-6 text-right">12%</span></div>
+        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">3★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:5%"></div></div><span class="text-[10px] text-muted w-6 text-right">5%</span></div>
+        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">≤2★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:3%"></div></div><span class="text-[10px] text-muted w-6 text-right">3%</span></div>
+      </div>
+    </div>
+    <div class="flex gap-3 px-5 overflow-x-auto no-sb pb-2">
+      <!-- Avis 1 -->
+      <div class="bg-white rounded-2xl p-4 flex-shrink-0 min-w-[260px]" style="border:1px solid rgba(143,19,67,0.09);">
+        <div class="flex gap-2 items-start mb-2">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#8F1343;">AF</div>
+          <div>
+            <p class="text-xs font-bold text-dark">Aminata F.</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span>
+            </div>
+          </div>
+          <span class="ml-auto text-[10px] text-muted">il y a 2j</span>
+        </div>
+        <p class="text-xs text-muted leading-relaxed">"Le rendu brillant est incroyable ! La teinte rouge-framboise est parfaite sur ma carnation, ultra gourmande."</p>
+      </div>
+      <!-- Avis 2 -->
+      <div class="bg-white rounded-2xl p-4 flex-shrink-0 min-w-[260px]" style="border:1px solid rgba(143,19,67,0.09);">
+        <div class="flex gap-2 items-start mb-2">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#EA5385;">NK</div>
+          <div>
+            <p class="text-xs font-bold text-dark">Nadia K.</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-off text-[11px]">★</span>
+            </div>
+          </div>
+          <span class="ml-auto text-[10px] text-muted">il y a 5j</span>
+        </div>
+        <p class="text-xs text-muted leading-relaxed">"J'adore la sensation, très douce et confortable. L'effet miroir est vraiment là. Hâte d'essayer toute la gamme Manifest !"</p>
+      </div>
+      <!-- Avis 3 -->
+      <div class="bg-white rounded-2xl p-4 flex-shrink-0 min-w-[260px]" style="border:1px solid rgba(143,19,67,0.09);">
+        <div class="flex gap-2 items-start mb-2">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#8F1343;">SC</div>
+          <div>
+            <p class="text-xs font-bold text-dark">Sophie C.</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span>
+            </div>
+          </div>
+          <span class="ml-auto text-[10px] text-muted">il y a 1 sem</span>
+        </div>
+        <p class="text-xs text-muted leading-relaxed">"Produit de qualité ! La couleur est subtile mais visible. Parfait pour un maquillage naturel avec une touche de glamour."</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-sep"></div>
+
+  <!-- ── GAMME MANIFEST — Cross-sell ── -->
+  <!-- Kit : "Les autres références servent à imaginer un bundle, un cross-sell ou une navigation de gamme cohérente." -->
+  <section class="py-6">
+    <div class="px-5 mb-4">
+      <h2 class="stitle">La gamme Manifest</h2>
+      <p class="text-muted text-xs mt-1">3 autres huiles à lèvres pour compléter votre routine</p>
+    </div>
+
+    <div class="flex gap-3 px-5 overflow-x-auto no-sb pb-2">
+
+      <!-- Pearl -->
+      <div class="product-card" style="min-width:148px;">
+        <div class="h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#F5F0EA,#EDE6DC);">
+          <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="Pearl — Transparente, noix de coco" class="h-32 object-contain" loading="lazy" style="filter:grayscale(0.4) brightness(1.1);" />
+        </div>
+        <div class="p-3">
+          <p class="text-[10px] text-muted uppercase tracking-wide font-semibold">Pearl</p>
+          <p class="text-xs font-bold text-dark leading-tight mt-0.5">Transparente — Coco</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="text-sm font-bold text-dark">15 000 FCFA</span>
+            <button class="w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center" style="background:#8F1343;" aria-label="Ajouter Pearl">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Muse -->
+      <div class="product-card" style="min-width:148px;">
+        <div class="h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#FFE0E6,#FFBCC6);">
+          <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="Muse — Inspirée de la fraise" class="h-32 object-contain" loading="lazy" style="filter:hue-rotate(-25deg) saturate(0.9);" />
+        </div>
+        <div class="p-3">
+          <p class="text-[10px] text-muted uppercase tracking-wide font-semibold">Muse</p>
+          <p class="text-xs font-bold text-dark leading-tight mt-0.5">Inspiration fraise</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="text-sm font-bold text-dark">15 000 FCFA</span>
+            <button class="w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center" style="background:#8F1343;" aria-label="Ajouter Muse">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ember -->
+      <div class="product-card" style="min-width:148px;">
+        <div class="h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#F0D0DA,#D8A0B0);">
+          <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="Ember — Inspirée de la cerise" class="h-32 object-contain" loading="lazy" style="filter:hue-rotate(5deg) saturate(1.3) brightness(0.9);" />
+        </div>
+        <div class="p-3">
+          <p class="text-[10px] text-muted uppercase tracking-wide font-semibold">Ember</p>
+          <p class="text-xs font-bold text-dark leading-tight mt-0.5">Inspiration cerise</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="text-sm font-bold text-dark">15 000 FCFA</span>
+            <button class="w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center" style="background:#8F1343;" aria-label="Ajouter Ember">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bundle Manifest -->
+    <div class="mx-5 mt-3 rounded-2xl p-4" style="background:rgba(143,19,67,0.04);border:1px solid rgba(143,19,67,0.12);">
+      <div class="flex items-center gap-2 mb-2">
+        <p class="text-xs font-bold text-dark">Pack Manifest complet — 4 huiles</p>
+        <span class="ml-auto badge">Bundle</span>
+      </div>
+      <p class="text-[10px] text-muted mb-3">Pearl · Muse · <strong>Velvet</strong> · Ember — toute la gamme en un coffret</p>
+      <button class="btn-main" style="padding:12px 16px;font-size:13px;" id="btnBundle">Découvrir le coffret Manifest</button>
+    </div>
+  </section>
+
+  <div class="section-sep"></div>
+
+ 
+
+</div><!-- /phone-frame -->
+
+<!-- ── STICKY CTA ── -->
+<div class="sticky-cta">
+  <div class="flex items-center gap-2">
+    <div class="flex-1 min-w-0">
+      <p class="text-xs font-bold text-dark truncate">DAZED VELVET - Huile à lèvres</p>
+      <p class="text-base font-extrabold text-dark">15 000 FCFA <span class="text-xs font-normal text-muted ml-1"></span></p>
+    </div>
+    <button class="btn-wish" id="btnWish" aria-label="Ajouter aux favoris">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8F1343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+      </svg>
+    </button>
+    <button class="btn-main flex-shrink-0" style="width:auto;padding:14px 20px;font-size:14px;" id="btnStickyCart">
+      Ajouter
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast">✓ Ajouté !</div>
+
+<script>
+  // ── GALERIE ──
+  const track = document.getElementById('galleryTrack');
+  const dots  = document.querySelectorAll('.gallery-dot');
+  let cur = 0, sx = 0;
+  function goSlide(i) {
+    cur = Math.max(0, Math.min(i, 3));
+    track.style.transform = 'translateX(-' + cur * 100 + '%)';
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === cur));
+  }
+  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 45) goSlide(cur + (dx < 0 ? 1 : -1));
+  });
+  dots.forEach(d => d.addEventListener('click', () => goSlide(+d.dataset.i)));
+  let ap = setInterval(() => goSlide((cur + 1) % 4), 4500);
+  track.addEventListener('touchstart', () => { clearInterval(ap); }, { passive: true });
+
+  // ── ACCORDION ──
+  document.querySelectorAll('.acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const el  = document.getElementById(btn.dataset.tgt);
+      const was = btn.classList.contains('open');
+      document.querySelectorAll('.acc-btn').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.acc-content').forEach(c => c.classList.remove('open'));
+      if (!was) { btn.classList.add('open'); el.classList.add('open'); }
+    });
+  });
+
+  // ── SWATCHES ──
+  const swNames = {
+    'sw-velvet':  'Velvet — Rouge-framboise translucide',
+    'sw-pearl':   'Pearl — Transparente, inspiration noix de coco',
+    'sw-muse':    'Muse — Inspirée de la fraise',
+    'sw-cherie':  'Chérie — Inspirée de la cerise',
+  };
+  Object.keys(swNames).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', () => {
+      document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('swatchName').textContent = swNames[id];
+    });
+  });
+
+  // ── QUANTITÉ ──
+  let qty = 1;
+  document.getElementById('qtyMinus').addEventListener('click', () => {
+    if (qty > 1) { qty--; document.getElementById('qtyVal').textContent = qty; }
+  });
+  document.getElementById('qtyPlus').addEventListener('click', () => {
+    if (qty < 10) { qty++; document.getElementById('qtyVal').textContent = qty; }
+  });
+
+  // ── TOAST ──
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2400);
+  }
+  document.getElementById('btnCart').addEventListener('click',       () => toast('✓ ' + qty + '× Velvet ajouté !'));
+  document.getElementById('btnStickyCart').addEventListener('click', () => toast('✓ Velvet ajouté au panier !'));
+  document.getElementById('btnBundle').addEventListener('click',     () => toast('✓ Coffret Manifest ajouté !'));
+
+  // ── WISHLIST ──
+  let wl = false;
+  document.getElementById('btnWish').addEventListener('click', () => {
+    wl = !wl;
+    document.getElementById('btnWish').classList.toggle('on', wl);
+    toast(wl ? '♥ Ajouté aux favoris !' : '♡ Retiré des favoris');
+  });
+
+  // ── SHARE ──
+  document.getElementById('btnShare').addEventListener('click', () => {
+    if (navigator.share) {
+      navigator.share({ title: 'DAZED Velvet', url: location.href }).catch(() => {});
+    } else {
+      toast('Lien copié !');
+    }
+  });
+</script>
+</body>
+</html>
