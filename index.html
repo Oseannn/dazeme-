@@ -409,13 +409,8 @@
         <img src="01_Velvet_Modele_Logo_Officiel.jpg" alt="DAZED Velvet — rendu rouge-framboise sur les lèvres" loading="lazy" />
         <div class="hero-overlay"></div>
         <div class="absolute top-4 left-4">
-          <span class="badge flex items-center gap-1">
-            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
-            </svg>
-            Manifest
-          </span>
         </div>
+        
         <div class="absolute bottom-14 left-4 right-4">
           <p class="text-white/70 text-[10px] font-semibold uppercase tracking-widest mb-1">Rendu sur les lèvres</p>
           <p class="text-white text-xl font-extrabold leading-tight">Rouge-framboise<br/>translucide &amp; juicy</p>
@@ -442,10 +437,10 @@
     <!-- Nom avec logo -->
     <div class="flex items-center gap-2 mb-2">
       <img src="05_Logo_DAZED_Officiel_Transparent.png" alt="DAZED" class="h-8 object-contain" />
-      <h1 class="text-[32px] font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-bordeaux to-rose">VELVET</h1>
+      <h1 class="text-[32px] font-extrabold leading-tight text-bordeaux">VELVET</h1>
     </div>
     
-    <p class="text-[15px] font-semibold text-rose mb-5">Rouge-framboise translucide</p>
+    <p class="text-[15px] font-semibold text-dark mb-5">Rouge-framboise translucide</p>
 
     <!-- Description -->
     <p class="text-[14.5px] text-dark leading-relaxed mb-6" style="text-align: justify; opacity: 0.9;">
@@ -490,7 +485,7 @@
 
   <!-- ── BÉNÉFICES PRODUIT ── -->
   <section class="px-5 py-6">
-    <h2 class="stitle mb-1">Ce que Velvet fait pour vous</h2>
+    <h2 class="stitle mb-1">Pourquoi vous allez l'adorer</h2>
     <p class="text-xs text-muted mb-4">À la rencontre du soin des lèvres et du maquillage</p>
     <div class="grid grid-cols-3 gap-2.5">
       <div class="benefit-card">
@@ -549,15 +544,14 @@
       <p class="text-muted text-xs mt-1">Glissez pour tout voir →</p>
     </div>
     <div class="flex gap-3 px-5 overflow-x-auto no-sb pb-2">
-      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
-        <img src="03_Velvet_Texture_Applicateur_Logo_Officiel.jpg" alt="Texture rouge-framboise et applicateur" class="w-full h-full object-contain" loading="lazy" />
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:170px;height:230px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="03_Velvet_Texture_Applicateur_Logo_Officiel.jpg" alt="Texture rouge-framboise et applicateur" class="w-full h-full object-cover" loading="lazy" />
       </div>
-      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
-        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="Territoire sensoriel framboise" class="w-full h-full object-contain" loading="lazy" />
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:170px;height:230px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="04_Velvet_Frambroise_Logo_Officiel.jpg" alt="Territoire sensoriel framboise" class="w-full h-full object-cover" loading="lazy" />
       </div>
-     
-      <div class="rounded-2xl overflow-hidden flex-shrink-0 flex items-center justify-center bg-white" style="width:165px;height:215px;border:1px solid rgba(143,19,67,0.08);">
-        <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="Flacon DAZED Velvet" class="h-48 object-contain" loading="lazy" />
+      <div class="rounded-2xl overflow-hidden flex-shrink-0 bg-white" style="width:170px;height:230px;border:1px solid rgba(143,19,67,0.08);">
+        <img src="02_Velvet_Packshot_Logo_Officiel.jpg" alt="Flacon DAZED Velvet" class="w-full h-full object-cover" loading="lazy" />
       </div>
     </div>
   </section>
@@ -575,33 +569,37 @@
           <svg class="acc-icon w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div id="a-desc" class="acc-content px-5 pb-5">
-          <p class="text-sm text-muted leading-relaxed mb-3">
-            <strong class="text-dark">DAZED Velvet</strong> est une huile à lèvres de la gamme Manifest signée Daze Me Beauty. À la rencontre du soin des lèvres et du maquillage, elle propose une teinte <strong class="text-dark">rouge-framboise translucide</strong> au fini ultra-brillant et à l'effet miroir juicy.
+          <p class="text-[14px] text-muted leading-relaxed mb-3">
+            Croque dans l'audace. <strong class="text-dark">DAZED Velvet</strong>, de la gamme Manifest, réunit le soin des lèvres et le maquillage dans un même geste. Elle dépose un voile rouge-framboise translucide, gorgé de lumière, pour un fini ultra-brillant à l'effet miroir, juicy à souhait.
           </p>
+          <p class="text-[14px] text-muted leading-relaxed mb-3">
+            Sa texture offre une sensation douce et confortable à chaque application. La teinte translucide se construit comme tu le souhaites : une touche pour un éclat subtil, plusieurs pour une couleur plus intense. Elle sublime toutes les carnations.
+          </p>
+          <p class="text-[14px] text-muted leading-relaxed mb-5">
+            Sensuelle, gourmande et audacieuse, <strong class="text-dark">DAZED Velvet</strong> est faite pour celles qui aiment qu'on remarque leur sourire.
+          </p>
+          
+          <h4 class="font-bold text-[14px] text-dark mb-3">Points clés</h4>
           <ul class="space-y-2 text-sm text-muted">
             <li class="flex items-start gap-2">
               <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
-              <span><strong class="text-dark">Catégorie :</strong> Huile à lèvres</span>
+              <span><strong class="text-dark">Teinte :</strong> rouge-framboise translucide</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Fini :</strong> ultra-brillant, juicy, effet miroir</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Sensation :</strong> douce et confortable</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
+              <span><strong class="text-dark">Pour :</strong> toutes les carnations</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
               <span><strong class="text-dark">Contenance :</strong> 10 ml</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
-              <span><strong class="text-dark">Teinte :</strong> Rouge-framboise translucide</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
-              <span><strong class="text-dark">Fini :</strong> Ultra-brillant, juicy, effet miroir</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
-              <span><strong class="text-dark">Sensation :</strong> Douce et confortable</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="font-bold mt-0.5 flex-shrink-0" style="color:#8F1343;">·</span>
-              <span><strong class="text-dark">Inspiration :</strong> Framboise</span>
             </li>
           </ul>
         </div>
@@ -662,70 +660,102 @@
 
   <!-- ── AVIS CLIENTS ── -->
   <section class="py-6">
-    <div class="px-5 mb-4">
-      <div class="flex items-end justify-between">
-        <div>
-          <h2 class="stitle">Avis clients</h2>
-          <div class="flex items-center gap-2 mt-2">
-            <div class="flex gap-0.5">
-              <span class="s-on text-base">★</span><span class="s-on text-base">★</span><span class="s-on text-base">★</span><span class="s-on text-base">★</span><span class="s-on text-base">★</span>
+    <div class="px-5 mb-5">
+      <h2 class="stitle mb-4">Avis clients</h2>
+
+      <!-- Note globale -->
+      <div class="bg-white rounded-[20px] p-5" style="border:1px solid rgba(143,19,67,0.08); box-shadow: 0 2px 12px rgba(0,0,0,0.03);">
+        <div class="flex items-center gap-5">
+          <!-- Score -->
+          <div class="text-center flex-shrink-0">
+            <p class="text-[36px] font-black text-dark leading-none">4.8</p>
+            <div class="flex gap-0.5 mt-1.5 justify-center">
+              <span class="s-on text-sm">★</span><span class="s-on text-sm">★</span><span class="s-on text-sm">★</span><span class="s-on text-sm">★</span><span class="s-on text-sm">★</span>
             </div>
-            <span class="text-sm font-bold text-dark">4.8/5</span>
-            <span class="text-xs text-muted">(127 avis)</span>
+            <p class="text-[10px] text-muted mt-1">127 avis</p>
+          </div>
+          <!-- Barres -->
+          <div class="flex-1 space-y-1.5">
+            <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-5 text-right">5★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:80%"></div></div><span class="text-[10px] text-muted w-7 text-right">80%</span></div>
+            <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-5 text-right">4★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:12%"></div></div><span class="text-[10px] text-muted w-7 text-right">12%</span></div>
+            <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-5 text-right">3★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:5%"></div></div><span class="text-[10px] text-muted w-7 text-right">5%</span></div>
+            <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-5 text-right">2★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:2%"></div></div><span class="text-[10px] text-muted w-7 text-right">2%</span></div>
+            <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-5 text-right">1★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:1%"></div></div><span class="text-[10px] text-muted w-7 text-right">1%</span></div>
           </div>
         </div>
-        <button class="text-xs font-semibold underline underline-offset-2" style="color:#8F1343;">Voir tous</button>
-      </div>
-      <div class="mt-3 space-y-1.5">
-        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">5★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:80%"></div></div><span class="text-[10px] text-muted w-6 text-right">80%</span></div>
-        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">4★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:12%"></div></div><span class="text-[10px] text-muted w-6 text-right">12%</span></div>
-        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">3★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:5%"></div></div><span class="text-[10px] text-muted w-6 text-right">5%</span></div>
-        <div class="flex items-center gap-2"><span class="text-[10px] text-muted w-4">≤2★</span><div class="prog-bar flex-1"><div class="prog-fill" style="width:3%"></div></div><span class="text-[10px] text-muted w-6 text-right">3%</span></div>
       </div>
     </div>
-    <div class="flex gap-3 px-5 overflow-x-auto no-sb pb-2">
-      <!-- Avis 1 -->
-      <div class="bg-white rounded-2xl p-4 flex-shrink-0 min-w-[260px]" style="border:1px solid rgba(143,19,67,0.09);">
-        <div class="flex gap-2 items-start mb-2">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#8F1343;">AF</div>
-          <div>
-            <p class="text-xs font-bold text-dark">Aminata F.</p>
-            <div class="flex gap-0.5 mt-0.5">
-              <span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span>
+
+    <!-- Cartes avis — carrousel pleine largeur -->
+    <div class="relative overflow-hidden" style="margin: 0 -20px;">
+      <div id="reviewsTrack" class="flex transition-transform duration-[420ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] will-change-transform">
+
+        <!-- Avis 1 -->
+        <div class="w-full flex-shrink-0 px-5">
+          <div class="bg-white rounded-[18px] p-5 shadow-sm" style="border:1px solid rgba(143,19,67,0.06);">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background: linear-gradient(135deg, #8F1343, #C0285A);">AF</div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-bold text-dark">Aminata F.</p>
+                <p class="text-[10px] text-muted">Achat vérifié</p>
+              </div>
+              <span class="text-[10px] text-muted flex-shrink-0">il y a 2j</span>
             </div>
-          </div>
-          <span class="ml-auto text-[10px] text-muted">il y a 2j</span>
-        </div>
-        <p class="text-xs text-muted leading-relaxed">"Le rendu brillant est incroyable ! La teinte rouge-framboise est parfaite sur ma carnation, ultra gourmande."</p>
-      </div>
-      <!-- Avis 2 -->
-      <div class="bg-white rounded-2xl p-4 flex-shrink-0 min-w-[260px]" style="border:1px solid rgba(143,19,67,0.09);">
-        <div class="flex gap-2 items-start mb-2">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#EA5385;">NK</div>
-          <div>
-            <p class="text-xs font-bold text-dark">Nadia K.</p>
-            <div class="flex gap-0.5 mt-0.5">
-              <span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-off text-[11px]">★</span>
+            <div class="flex gap-0.5 mb-2.5">
+              <span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span>
             </div>
+            <p class="text-[12.5px] text-dark leading-relaxed" style="opacity:0.85;">"Le rendu brillant est incroyable ! La teinte rouge-framboise est parfaite sur ma carnation, ultra gourmande."</p>
           </div>
-          <span class="ml-auto text-[10px] text-muted">il y a 5j</span>
         </div>
-        <p class="text-xs text-muted leading-relaxed">"J'adore la sensation, très douce et confortable. L'effet miroir est vraiment là. Hâte d'essayer toute la gamme Manifest !"</p>
-      </div>
-      <!-- Avis 3 -->
-      <div class="bg-white rounded-2xl p-4 flex-shrink-0 min-w-[260px]" style="border:1px solid rgba(143,19,67,0.09);">
-        <div class="flex gap-2 items-start mb-2">
-          <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#8F1343;">SC</div>
-          <div>
-            <p class="text-xs font-bold text-dark">Sophie C.</p>
-            <div class="flex gap-0.5 mt-0.5">
-              <span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span><span class="s-on text-[11px]">★</span>
+
+        <!-- Avis 2 -->
+        <div class="w-full flex-shrink-0 px-5">
+          <div class="bg-white rounded-[18px] p-5 shadow-sm" style="border:1px solid rgba(143,19,67,0.06);">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background: linear-gradient(135deg, #EA5385, #D14070);">NK</div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-bold text-dark">Nadia K.</p>
+                <p class="text-[10px] text-muted">Achat vérifié</p>
+              </div>
+              <span class="text-[10px] text-muted flex-shrink-0">il y a 5j</span>
             </div>
+            <div class="flex gap-0.5 mb-2.5">
+              <span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-off text-[12px]">★</span>
+            </div>
+            <p class="text-[12.5px] text-dark leading-relaxed" style="opacity:0.85;">"J'adore la sensation, très douce et confortable. L'effet miroir est vraiment là. Hâte d'essayer toute la gamme Manifest !"</p>
           </div>
-          <span class="ml-auto text-[10px] text-muted">il y a 1 sem</span>
         </div>
-        <p class="text-xs text-muted leading-relaxed">"Produit de qualité ! La couleur est subtile mais visible. Parfait pour un maquillage naturel avec une touche de glamour."</p>
+
+        <!-- Avis 3 -->
+        <div class="w-full flex-shrink-0 px-5">
+          <div class="bg-white rounded-[18px] p-5 shadow-sm" style="border:1px solid rgba(143,19,67,0.06);">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background: linear-gradient(135deg, #8F1343, #C0285A);">SC</div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-bold text-dark">Sophie C.</p>
+                <p class="text-[10px] text-muted">Achat vérifié</p>
+              </div>
+              <span class="text-[10px] text-muted flex-shrink-0">il y a 1 sem</span>
+            </div>
+            <div class="flex gap-0.5 mb-2.5">
+              <span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span><span class="s-on text-[12px]">★</span>
+            </div>
+            <p class="text-[12.5px] text-dark leading-relaxed" style="opacity:0.85;">"Produit de qualité ! La couleur est subtile mais visible. Parfait pour un maquillage naturel avec une touche de glamour."</p>
+          </div>
+        </div>
+
       </div>
+      <!-- Dots indicateurs -->
+      <div class="flex justify-center gap-2 mt-4" id="reviewDots">
+        <div class="gallery-dot active" data-ri="0"></div>
+        <div class="gallery-dot" data-ri="1"></div>
+        <div class="gallery-dot" data-ri="2"></div>
+      </div>
+    </div>
+
+    <!-- Bouton voir tous -->
+    <div class="px-5 mt-4">
+      <button class="btn-outline w-full" style="font-size:13px; padding:12px 16px;">Voir les 127 avis</button>
     </div>
   </section>
 
@@ -839,21 +869,37 @@
 <script>
   // ── GALERIE ──
   const track = document.getElementById('galleryTrack');
-  const dots  = document.querySelectorAll('.gallery-dot');
+  const galDots = document.querySelectorAll('#galDots .gallery-dot');
   let cur = 0, sx = 0;
   function goSlide(i) {
     cur = Math.max(0, Math.min(i, 3));
     track.style.transform = 'translateX(-' + cur * 100 + '%)';
-    dots.forEach((d, idx) => d.classList.toggle('active', idx === cur));
+    galDots.forEach((d, idx) => d.classList.toggle('active', idx === cur));
   }
   track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
   track.addEventListener('touchend',   e => {
     const dx = e.changedTouches[0].clientX - sx;
     if (Math.abs(dx) > 45) goSlide(cur + (dx < 0 ? 1 : -1));
   });
-  dots.forEach(d => d.addEventListener('click', () => goSlide(+d.dataset.i)));
+  galDots.forEach(d => d.addEventListener('click', () => goSlide(+d.dataset.i)));
   let ap = setInterval(() => goSlide((cur + 1) % 4), 4500);
   track.addEventListener('touchstart', () => { clearInterval(ap); }, { passive: true });
+
+  // ── CARROUSEL AVIS ──
+  const rTrack = document.getElementById('reviewsTrack');
+  const rDots  = document.querySelectorAll('#reviewDots .gallery-dot');
+  let rCur = 0, rSx = 0;
+  function goReview(i) {
+    rCur = Math.max(0, Math.min(i, 2));
+    rTrack.style.transform = 'translateX(-' + rCur * 100 + '%)';
+    rDots.forEach((d, idx) => d.classList.toggle('active', idx === rCur));
+  }
+  rTrack.addEventListener('touchstart', e => { rSx = e.touches[0].clientX; }, { passive: true });
+  rTrack.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - rSx;
+    if (Math.abs(dx) > 45) goReview(rCur + (dx < 0 ? 1 : -1));
+  });
+  rDots.forEach(d => d.addEventListener('click', () => goReview(+d.dataset.ri)));
 
   // ── ACCORDION ──
   document.querySelectorAll('.acc-btn').forEach(btn => {
